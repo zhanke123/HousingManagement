@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper.Mapper">
+    <select id="findAll" resultType="Model.Bean.Unit">
+        SELECT * FROM tb002 WHERE UNITACCNUM=#{UNITACCNUM}
+    </select>
+    <insert id="unitRegister">
+        INSERT INTO tb002(UNITACCNUM,UNITACCNAME,UNITADDR,ORGCODE,UNITCHAR,UNITKIND,SALARYDATE,UNITPHONE,UNITLINKMAN,UNITAGENTPAPNO,ACCSTATE,BALANCE,BASENUMBER,UNITPROP,PERPROP,UNITPAYSUM,PERPAYSUM,PERSNUM,CREATDATE,REMARK
+        ) VALUE (#{UNITACCNUM},#{UNITACCNAME},#{UNITADDR},#{ORGCODE},#{UNITCHAR},#{UNITKIND},#{SALARYDATE},#{UNITPHONE},#{UNITLINKMAN},#{UNITAGENTPAPNO},#{ACCSTATE},#{BALANCE},#{BASENUMBER},#{UNITPROP},#{PERPROP},#{UNITPAYSUM},#{PERPAYSUM},#{PERSNUM},#{CREATDATE},#{REMARK}
+            )
+    </insert>
+    <update id="updateUnit">
+        UPDATE tb002 SET UNITACCNAME=#{UNITACCNAME},UNITADDR=#{UNITADDR},ORGCODE=${ORGCODE},UNITCHAR=#{UNITCHAR},UNITKIND=#{UNITKIND},SALARYDATE=#{SALARYDATE},UNITPHONE=#{UNITPHONE},UNITLINKMAN=#{UNITLINKMAN},UNITAGENTPAPNO=#{UNITAGENTPAPNO},REMARK=#{REMARK} WHERE UNITACCNUM=#{UNITACCNUM}
+    </update>
+    <delete id="deleteUnit">
+        DELETE	FROM tb002 WHERE UNITACCNUM=#{UNITACCNUM}
+    </delete>
+    <select id="getAllInfo" resultType="Model.Bean.Unit">
+        select * from tb002;
+    </select>
+    <select id="dimSearch" resultType="Model.Bean.Unit">
+        SELECT * FROM tb002 WHERE UNITACCNAME LIKE #{UNITACCNAME}
+    </select>
+</mapper>

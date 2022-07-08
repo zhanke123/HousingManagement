@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper.SystemMapper">
+    <select id="getInfo" resultType="Model.Bean.System">
+        select * from tb001 where SEQNAME=#{SEQNAME}
+    </select>
+    <update id="updateSystem">
+        UPDATE tb001 SET SEQ=#{SEQ} WHERE SEQNAME=#{SEQNAME}
+    </update>
+    <insert id="insertSystem">
+        insert into tb001 value (#{SEQNAME},#{SEQ},#{MAXSEQ},#{DESC},#{FREEUSE1})
+    </insert>
+</mapper>

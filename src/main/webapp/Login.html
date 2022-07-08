@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #banner{
+            width: 100%;
+            height: 200px;
+            background-color: firebrick;
+            top: 0;
+        }
+        #choose{
+            height: 400px;
+            width: 800px;
+            box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-top: 20px;
+            margin-left: 30%;
+        }
+        .button{
+            border: none;
+            color: white;
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5%;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+        }
+        #userButton{
+            background-color: firebrick;
+        }
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        input[type=text], select {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+        input[type=password], select {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+<div id="banner">
+    <div style="height: 1px"></div>
+    <div style="color: white;font-size: 40px;margin-left: 10%;margin-top:40px;font-weight: bold">
+        住房公积金管理系统
+    </div>
+    <div style="color: white;font-size: 20px;margin-left: 10%">h o u s i n g  f u n d  m a n a g e m e n t</div>
+</div>
+<div id="choose">
+    <div align="center" style="font-size: 30px;font-weight: bold;margin-top: 20px;color: gray">网上业务平台</div>
+    <div align="center" style="margin-top: 5%">
+        <form action="/Login">
+            <div style="font-weight: bold;font-size: 30px;color: firebrick">管理员登录</div><br>
+            帐号：<input name="username" type="text"><br>
+            密码：<input name="password" type="password"><br>
+            <input type="submit" id="userButton" class="button" value="登录">
+        </form>
+    </div>
+</div>
+</body>
+</html>

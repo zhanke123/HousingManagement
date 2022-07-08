@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper.PersonalMapper">
+    <select id="findAll" resultType="Model.Bean.Personal">
+        select * from tb003 where ACCNUM=#{ACCNUM}
+    </select>
+    <select id="findAllForSFZ" resultType="Model.Bean.Personal">
+        select * from tb003 where SFZ=#{SFZ}
+    </select>
+    <insert id="PersonalRegister">
+        INSERT INTO tb003 (ACCNUM,UNITACCNUM,OPENDATE,BALANCE,PERACCSTATE,BASENUMBER,LASTPAYDATE,UNITMONPAYSUM,PERMONPAYSUM,YPAYAMT,YDRAWAMT,YINTERESTBAL,INSTCODE,OP,REMARK,SFZ,NAME) VALUE
+            (#{ACCNUM},#{UNITACCNUM},#{OPENDATE},#{BALANCE},#{PERACCSTATE},#{BASENUMBER},#{LASTPAYDATE},#{UNITMONPAYSUM},#{PERMONPAYSUM},#{YPAYAMT},#{YDRAWAMT},#{YINTERESTBAL},#{INSTCODE},#{OP},#{REMARK},#{SFZ},#{NAME})
+    </insert>
+    <update id="updatePersonal">
+        UPDATE tb003 SET NAME=#{NAME},SFZ=#{SFZ} where ACCNUM=#{ACCNUM}
+    </update>
+    <delete id="deletePersonal">
+        DELETE	FROM tb003 WHERE ACCNUM=#{ACCNUM}
+    </delete>
+    <select id="getAllInfo" resultType="Model.Bean.Personal">
+        select * from tb003;
+    </select>
+    <select id="getInfoForSFZ" resultType="String">
+        SELECT SFZ FROM tb003 where SFZ=#{SFZ}
+    </select>
+</mapper>
